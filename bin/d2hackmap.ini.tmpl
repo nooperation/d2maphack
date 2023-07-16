@@ -1,0 +1,34 @@
+// Auto load d2hackmap.dll when game started
+// 0 -- disable, default
+// 1 -- auto load hackmap if integrity check succeed
+// 2 -- auto load hackmap, disable integrity check
+// 游戏启动时自动加载d2hackmap.dll
+// 0 -- 禁止自动加载，默认设置
+// 1 -- 只有通过完整性检查时才自动加载
+// 2 -- 自动加载，不做完整性检查
+Auto Load Hackmap Dll : 0
+
+// Integrity scan option
+// 1 -- scan game releated dlls only, default
+// 0 -- all loaded modules(exe, dlls) in game process
+// 完整性检查选项
+// 1 -- 只扫描游戏相关dll，默认设置
+// 0 -- 扫描所有已加载到游戏中的模块
+Scan Game Dlls Only : 1
+
+// Report Integrity scan result in game
+// 1 -- enable
+// 0 -- disable, default
+// 在游戏内报告完整性检查结果
+Report IScan in Game : 0
+
+// Auto safely reveal map when act changed
+// 0 -- disable, default
+// 1 -- auto reveal map, stop if Integrity scan failed, and no warnings
+// 2 -- auto reveal map anyway, disable Integrity scan
+// 场景切换时自动开地图。（本功能不需要d2hackmap.dll支持）
+// 0 -- 禁止，默认设置
+// 1 -- 完全性检查通过后自动开地图
+// 2 -- 自动开地图，不做安全性检查
+Auto Reveal map : 0
+

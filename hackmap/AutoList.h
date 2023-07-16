@@ -12,17 +12,22 @@ template<class Cont>
 class AutoList : public std::set<typename Cont::key_type>
 {
 public:
-	explicit AutoList(Cont& x):cont_(x)
+	explicit AutoList(Cont& x) : cont_(x)
 	{
-		// works in vc7.1, not with bullshit vc6.0
-//		std::for_each( cont_.begin(), cont_.end(), const_mem_fun_bind(*this, AutoList::insert_element) );
-		// vc6.0 use this
-		std::for_each( cont_.begin(), cont_.end(), const_mem_fun_bind<AutoList,Cont::value_type,void>(*this, AutoList::insert_element) );
+		for (const auto& item : cont_)
+		{
+			this->insert(item.first);
+		}
 	}
+
 	~AutoList()
 	{
-		std::for_each( begin(), end(), const_mem_fun_bind<AutoList, value_type, void>(*this, AutoList::erase_element) );
+		while (!this->empty())
+		{
+			this->erase(this->begin());
+		}
 	}
+
 private:
 	void insert_element(typename Cont::const_reference val)
 	{

@@ -20,6 +20,7 @@
 #include <malloc.h>
 #include <wchar.h>
 #include <math.h>
+#include <cstddef>
 #include "d2structs.h"
 #include "hackmap.h"
 
@@ -1917,11 +1918,11 @@ BOOL PrepareGetPlayerStat()
 			*(int*)(abGetPlayerStat+i+1) += offsetofcall;
 		}
 	}
-	for (i = 0; i < ARRAYSIZE(anGetPlayerStatJmpTbl); i++) {
+	for (std::size_t i = 0; i < ARRAYSIZE(anGetPlayerStatJmpTbl); i++) {
 		anGetPlayerStatJmpTbl[i] += abGetPlayerStat+sizeof(prelog) - ps;
 	}
 	*(DWORD*)(abGetPlayerStat+sizeof(prelog)+offsetjmptbl) = (DWORD)anGetPlayerStatJmpTbl;
-	for (i = 0; i < ARRAYSIZE(anGetPlayerStatJmpTbl2); i++) {
+	for (std::size_t i = 0; i < ARRAYSIZE(anGetPlayerStatJmpTbl2); i++) {
 		anGetPlayerStatJmpTbl2[i] += abGetPlayerStat+sizeof(prelog) - ps;
 	}
 	*(DWORD*)(abGetPlayerStat+sizeof(prelog)+offsetjmptbl2) = (DWORD)anGetPlayerStatJmpTbl2;
@@ -2150,9 +2151,12 @@ void GetHighestTC(int tcno, TCTallys *tallys)
 
 void InitTCList()
 {
+	int i = 0;
+	int j = 0;
+
 	MonsterTxt *mon;
 	// i < ARRAYSIZE(anMonsterTCs)
-	for (int i = 0; mon = D2CLIENT_GetMonsterTxt(i); i++) {
+	for (i = 0; mon = D2CLIENT_GetMonsterTxt(i); i++) {
 		TCTallys tallys;
 		memset(&tallys, 0, sizeof(tallys));
 		for (int j = 0; j < 4; j++) {
@@ -2163,7 +2167,7 @@ void InitTCList()
 	}
 	SuperuniqueTxt *sup;
 	// j < ARRAYSIZE(anSuperuniqueTCs)
-	for (int j = 0; sup = D2COMMON_GetSuperuniqueTxt(j); j++) {
+	for (j = 0; sup = D2COMMON_GetSuperuniqueTxt(j); j++) {
 		TCTallys tallys;
 		memset(&tallys, 0, sizeof(tallys));
 		int tcno = sup->tcs[D2CLIENT_GetDifficulty()];
@@ -3634,7 +3638,7 @@ void D2UnicodeFix(LPWSTR lpText, DWORD * dwPos)
 {
 	DWORD len, i, j;
 	WORD  char1, char2;
-	WORD  uchar;
+	WCHAR  uchar;
 	BYTE  mbchar[2];
 	DWORD	dwOldPos;
 	DWORD	dwNewPos;
@@ -3801,7 +3805,7 @@ DWORD __fastcall ChannelEnterCharPatch(D2EditBox *hWnd, BYTE bKeyCode)
 	LPWSTR	lpText;
 	DWORD i, j, len;
 	WORD  char1, char2;
-	WORD  uchar;
+	WCHAR  uchar;
 	BYTE	mbchar[2];
 	DWORD	dwPos;
 	HGLOBAL hGlobal;
@@ -4014,7 +4018,7 @@ DWORD __fastcall D2LocaleGameChat(LPWSTR lpText, DWORD u1, DWORD u2)
 {
 	DWORD len;
 	WORD  char1, char2;
-	WORD  uchar;
+	WCHAR  uchar;
 	BYTE  mbchar[2];
 
 	if (lpText) {

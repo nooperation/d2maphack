@@ -1,37 +1,24 @@
-Microsoft Visual Studio Solution File, Format Version 8.00
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "hackmap", "hackmap\hackmap.vcproj", "{6BA6C55D-299E-439C-ACCA-0FBC3927D690}"
-	ProjectSection(ProjectDependencies) = postProject
-	EndProjectSection
-EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "hnmloader", "hnmloader\hnmloader.vcproj", "{077B635E-79D4-42F2-8054-86DB9A53DFDA}"
-	ProjectSection(ProjectDependencies) = postProject
-	EndProjectSection
-EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "res_sc", "hnmloader\res_sc\res_sc.vcproj", "{B6E02A7E-B98F-42E0-A1CA-B4F273C21888}"
-	ProjectSection(ProjectDependencies) = postProject
-	EndProjectSection
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.6.33723.286
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "hackmap", "hackmap\hackmap.vcxproj", "{6BA6C55D-299E-439C-ACCA-0FBC3927D690}"
 EndProject
 Global
-	GlobalSection(SolutionConfiguration) = preSolution
-		Debug = Debug
-		Release = Release
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x86 = Debug|x86
+		Release|x86 = Release|x86
 	EndGlobalSection
-	GlobalSection(ProjectConfiguration) = postSolution
-		{6BA6C55D-299E-439C-ACCA-0FBC3927D690}.Debug.ActiveCfg = Debug|Win32
-		{6BA6C55D-299E-439C-ACCA-0FBC3927D690}.Debug.Build.0 = Debug|Win32
-		{6BA6C55D-299E-439C-ACCA-0FBC3927D690}.Release.ActiveCfg = Release|Win32
-		{6BA6C55D-299E-439C-ACCA-0FBC3927D690}.Release.Build.0 = Release|Win32
-		{077B635E-79D4-42F2-8054-86DB9A53DFDA}.Debug.ActiveCfg = Debug|Win32
-		{077B635E-79D4-42F2-8054-86DB9A53DFDA}.Debug.Build.0 = Debug|Win32
-		{077B635E-79D4-42F2-8054-86DB9A53DFDA}.Release.ActiveCfg = Release|Win32
-		{077B635E-79D4-42F2-8054-86DB9A53DFDA}.Release.Build.0 = Release|Win32
-		{B6E02A7E-B98F-42E0-A1CA-B4F273C21888}.Debug.ActiveCfg = Release|Win32
-		{B6E02A7E-B98F-42E0-A1CA-B4F273C21888}.Debug.Build.0 = Release|Win32
-		{B6E02A7E-B98F-42E0-A1CA-B4F273C21888}.Release.ActiveCfg = Release|Win32
-		{B6E02A7E-B98F-42E0-A1CA-B4F273C21888}.Release.Build.0 = Release|Win32
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6BA6C55D-299E-439C-ACCA-0FBC3927D690}.Debug|x86.ActiveCfg = Debug|Win32
+		{6BA6C55D-299E-439C-ACCA-0FBC3927D690}.Debug|x86.Build.0 = Debug|Win32
+		{6BA6C55D-299E-439C-ACCA-0FBC3927D690}.Release|x86.ActiveCfg = Release|Win32
+		{6BA6C55D-299E-439C-ACCA-0FBC3927D690}.Release|x86.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-	EndGlobalSection
-	GlobalSection(ExtensibilityAddIns) = postSolution
+		SolutionGuid = {0F8E11D5-2A27-4E86-B003-C48A143F1629}
 	EndGlobalSection
 EndGlobal
